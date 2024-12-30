@@ -1,0 +1,45 @@
+mkdir spotify-top-50-2024
+cd spotify-top-50-2024
+git init
+
+mkdir -p data 
+touch data/top_50_songs_2024.csv 
+mkdir -p analysis
+touch analysis/analyze_songs.py
+touch README.md
+
+echo "rank,song_name,artist,album,release_date,duration_ms,popularity" > data/top_50_songs_2024.csv 
+echo "1,Blinding Lights,The Weeknd,After Hours,2020-03-20,200000,95" >> data/top_50_songs_2024.csv 
+echo "2,Dance Monkey, Tones and I,Dance Monkey,2019-05-10,180000,92" >> data/top_50_songs_2024.csv 
+# ... add more songs here
+
+echo "# Spotify Top 50 Songs of 2024" >> README.md
+echo "" >> README.md
+echo "This repository contains a conceptual dataset of the top 50 songs on Spotify in 2024." >> README.md
+echo "" >> README.md
+echo "**Disclaimer:**" >> README.md
+echo "This data is for illustrative purposes only and may not reflect the actual 2024 Spotify Top 50." >> README.md 
+echo "Please refer to official sources for accurate data." >> README.md
+echo "" >> README.md
+echo "**Data Dictionary:**" >> README.md
+echo "* `rank`: Rank of the song on the chart." >> README.md
+echo "* `song_name`: Name of the song." >> README.md
+echo "* `artist`: Artist(s) of the song." >> README.md
+echo "* `album`: Album the song belongs to." >> README.md
+echo "* `release_date`: Release date of the song." >> README.md
+echo "* `duration_ms`: Duration of the song in milliseconds." >> README.md
+echo "* `popularity`: Spotify's popularity score for the song (0-100)." >> README.md
+
+echo "import pandas as pd" > analysis/analyze_songs.py
+echo "" >> analysis/analyze_songs.py
+echo "df = pd.read_csv('data/top_50_songs_2024.csv')" >> analysis/analyze_songs.py
+echo "" >> analysis/analyze_songs.py
+echo "# Calculate average song duration" >> analysis/analyze_songs.py
+echo "avg_duration = df['duration_ms'].mean()" >> analysis/analyze_songs.py
+echo "print(f'Average Song Duration: {avg_duration/1000:.2f} seconds')" >> analysis/analyze_songs.py 
+
+git add .
+git commit -m "Initial commit with sample data and basic analysis"
+
+# This is a conceptual example, and you should replace the sample data 
+# with the actual 2024 Spotify Top 50 songs list.
